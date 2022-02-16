@@ -3,8 +3,10 @@ package com.example.healthfy.sceens
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.CircularProgressIndicator
@@ -12,6 +14,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -27,7 +30,7 @@ import com.example.healthfy.R
 
 
 @Composable
-fun SplashScreen(){
+fun SplashScreen() {
 
     ConstraintLayout(
         modifier = Modifier
@@ -37,6 +40,7 @@ fun SplashScreen(){
         val (banner, title, slogan, btn) = createRefs()
         Image(painter = painterResource(id = R.drawable.f),
             modifier = Modifier
+                .padding(8.dp)
                 .fillMaxWidth()
                 .constrainAs(banner) {
 
@@ -49,7 +53,7 @@ fun SplashScreen(){
 
         Text(
             text = "HEALTHFY",
-            modifier = Modifier.constrainAs(title){
+            modifier = Modifier.constrainAs(title) {
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
                 top.linkTo(banner.bottom, margin = 30.dp)
@@ -61,7 +65,7 @@ fun SplashScreen(){
 
         val welcomeText = "Your Health is our Concern"
         Text(
-            text = welcomeText ,
+            text = welcomeText,
             modifier = Modifier
                 .padding(horizontal = 4.dp)
                 .constrainAs(slogan) {
@@ -78,23 +82,24 @@ fun SplashScreen(){
             color = Color.Black.copy(alpha = 0.78F)
         )
 
-
-        Button(onClick = { },
-            shape = CircleShape,
+        Box(
             modifier = Modifier
-                .size(width = 190.dp, height = 40.dp)
-                .padding(horizontal = 16.dp)
-                .fillMaxWidth()
+                .clip(shape = RoundedCornerShape(16.dp))
+                .clickable { }
+                .background(Color(0XFFE35F4B))
+                .size(width = 150.dp, height = 40.dp)
                 .constrainAs(btn) {
                     top.linkTo(slogan.bottom, margin = 90.dp)
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
+                    start.linkTo(parent.start, margin = 16.dp)
                 }
         ) {
-            Text(text = "GET STARTED" )
-
+            Text(
+                text = "GET STARTED",
+                modifier = Modifier
+                    .align(Alignment.Center),
+                textAlign = TextAlign.Center
+            )
         }
-
     }
 
     FeaturedCircularProgressIndicator()
@@ -108,7 +113,7 @@ fun FeaturedCircularProgressIndicator() {
             .fillMaxWidth()
             .fillMaxHeight(),
         verticalArrangement = Arrangement.Bottom,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.Start
     ) {
         CircularProgressIndicator(
             progress = 0.8f,
@@ -117,13 +122,11 @@ fun FeaturedCircularProgressIndicator() {
             strokeWidth = 2.dp
         )
     }
-
 }
-
 
 
 @Composable
 @Preview(uiMode = UI_MODE_NIGHT_YES, device = Devices.PIXEL)
-fun SplashScreenPrev(){
+fun SplashScreenPrev() {
     SplashScreen()
 }
