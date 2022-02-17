@@ -22,40 +22,50 @@ fun SearchBar(
     hint: String = "",
     onSearch: (String) -> Unit = {}
 ){
-    var text by remember{
-        mutableStateOf("")
-    }
-    var isHintDisplayed by remember{
-        mutableStateOf(hint!= "")
-    }
-    
-    Box(modifier = modifier){
-        BasicTextField(value = text
-            , onValueChange ={
-                text = it
-                onSearch(it)
-            },
-            maxLines = 1,
-            singleLine = true,
-            textStyle = TextStyle(color = Color.Black),
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = Color.White)
-                .shadow(5.dp, CircleShape)
-                .padding(horizontal = 20.dp, vertical = 12.dp)
-                .onFocusChanged {
-//                    isHintDisplayed = it != FocusState.Active
-                }
-        )
-        if (isHintDisplayed){
-            Text(
-                text = hint,
-                color = Color.LightGray,
-                modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp)
+    Column(
+        Modifier
+            .fillMaxHeight()
+            .background(Color(0xFFF0D4D1))
+    ) {
+        Row(modifier = Modifier.fillMaxWidth()) {
+            var text by remember{
+                mutableStateOf("")
+            }
+            var isHintDisplayed by remember{
+                mutableStateOf(hint!= "")
+            }
 
-            )
+            Box(modifier = modifier){
+                BasicTextField(value = text
+                    , onValueChange ={
+                        text = it
+                        onSearch(it)
+                    },
+                    maxLines = 1,
+                    singleLine = true,
+                    textStyle = TextStyle(color = Color.Black),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(color = Color.White)
+                        .shadow(5.dp, CircleShape)
+                        .padding(horizontal = 20.dp, vertical = 12.dp)
+                        .onFocusChanged {
+//                    isHintDisplayed = it != FocusState.Active
+                        }
+                )
+                if (isHintDisplayed){
+                    Text(
+                        text = hint,
+                        color = Color.LightGray,
+                        modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp)
+
+                    )
+                }
+            }
         }
+
     }
+
 }
 
 
