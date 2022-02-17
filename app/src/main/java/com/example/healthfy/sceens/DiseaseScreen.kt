@@ -9,8 +9,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Color.Companion.Blue
-import androidx.compose.ui.graphics.Color.Companion.Yellow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -75,9 +73,10 @@ fun DiseaseScreen() {
                 Box(modifier = Modifier
                     .height(143.dp)
                 ) {
-                    Image(painter = painterResource(id = R.drawable.he),
+                    Image(painter = painterResource(id = R.drawable.dis),
                         contentDescription = "Get help from a Medic",
-                        contentScale = ContentScale.Fit
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
 
                     )
                     Box(modifier = Modifier
@@ -85,7 +84,7 @@ fun DiseaseScreen() {
                         .padding(12.dp),
                         contentAlignment = Alignment.BottomStart
                     ){
-                        Text(text = "Contact Us",
+                        Text(text = "Definition and Causes",
                             style = TextStyle(color = Color.Black),
                             fontWeight = FontWeight.Bold,
                             fontSize = 16.sp)
@@ -106,9 +105,10 @@ fun DiseaseScreen() {
             ) {
                 Box(modifier = Modifier
                     .height(143.dp)) {
-                    Image(painter = painterResource(id = R.drawable.how),
+                    Image(painter = painterResource(id = R.drawable.sin),
                         contentDescription = "Get help from a Medic",
-                        contentScale = ContentScale.FillBounds
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
 
                     )
                     Box(modifier = Modifier
@@ -116,7 +116,7 @@ fun DiseaseScreen() {
                         .padding(12.dp),
                         contentAlignment = Alignment.BottomStart
                     ){
-                        Text(text = "How To Use The App",
+                        Text(text = "Signs And Symptoms",
                             style = TextStyle(color = Color.Black),
                             fontWeight = FontWeight.Bold,
                             fontSize = 16.sp)
@@ -137,9 +137,10 @@ fun DiseaseScreen() {
             ) {
                 Box(modifier = Modifier
                     .height(143.dp)) {
-                    Image(painter = painterResource(id = R.drawable.ab),
+                    Image(painter = painterResource(id = R.drawable.terr),
                         contentDescription = "Get help from a Medic",
-                        contentScale = ContentScale.FillBounds
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
 
                     )
                     Box(modifier = Modifier
@@ -147,7 +148,7 @@ fun DiseaseScreen() {
                         .padding(12.dp),
                         contentAlignment = Alignment.BottomStart
                     ){
-                        Text(text = "About Us",
+                        Text(text = "Treatment",
                             style = TextStyle(color = Color.Black),
                             fontWeight = FontWeight.Bold,
                             fontSize = 16.sp)
@@ -168,9 +169,10 @@ fun DiseaseScreen() {
             ) {
                 Box(modifier = Modifier
                     .height(143.dp)) {
-                    Image(painter = painterResource(id = R.drawable.ab),
+                    Image(painter = painterResource(id = R.drawable.di),
                         contentDescription = "Get help from a Medic",
-                        contentScale = ContentScale.FillBounds
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
 
                     )
                     Box(modifier = Modifier
@@ -178,7 +180,7 @@ fun DiseaseScreen() {
                         .padding(12.dp),
                         contentAlignment = Alignment.BottomStart
                     ){
-                        Text(text = "About Us",
+                        Text(text = "Preferred Diet and Recipe",
                             style = TextStyle(color = Color.Black),
                             fontWeight = FontWeight.Bold,
                             fontSize = 16.sp)

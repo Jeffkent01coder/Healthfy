@@ -79,7 +79,8 @@ fun HelpScreen(){
             ) {
                 Image(painter = painterResource(id = R.drawable.he),
                     contentDescription = "Get help from a Medic",
-                    contentScale = ContentScale.Fit
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
 
                 )
                 Box(modifier = Modifier
@@ -96,7 +97,7 @@ fun HelpScreen(){
             }
 
         }
-        
+
         Spacer(modifier = Modifier.height(15.dp))
 
         Card(
@@ -110,7 +111,8 @@ fun HelpScreen(){
                 .height(200.dp)) {
                 Image(painter = painterResource(id = R.drawable.how),
                     contentDescription = "Get help from a Medic",
-                    contentScale = ContentScale.FillBounds
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
 
                 )
                 Box(modifier = Modifier
@@ -141,7 +143,8 @@ fun HelpScreen(){
                 .height(200.dp)) {
                 Image(painter = painterResource(id = R.drawable.ab),
                     contentDescription = "Get help from a Medic",
-                    contentScale = ContentScale.FillWidth
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
 
                 )
                 Box(modifier = Modifier
