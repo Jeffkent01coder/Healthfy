@@ -32,6 +32,7 @@ fun DiseaseScreen() {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
+            .fillMaxWidth()
             .fillMaxSize()
             .scrollable(scrollState, enabled = true, orientation = Orientation.Vertical)
             .background(Color(0xFFF0D4D1))
@@ -124,7 +125,6 @@ fun CardExample(image: Painter, text: String) {
 
     }
 }
-
 @Composable
 @Preview(device = Devices.PIXEL)
 fun DiseaseScreenPrev() {

@@ -10,6 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.healthfy.sceens.Home
+import com.example.healthfy.sceens.SearchBar
 import com.example.healthfy.sceens.SplashScreen
 import com.example.healthfy.ui.theme.HealthfyTheme
 
@@ -24,9 +26,10 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
 
-                    SplashScreen()
+                    Home()
                 }
             }
         }
     }
+
 }
